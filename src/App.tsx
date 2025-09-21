@@ -1,11 +1,11 @@
-import CartItemList from "./components/CartItemList";
 import Header from "./components/Header";
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <main>
       <Header />
-      <CartItemList />
+      <Layout />
     </main>
   )
 }
