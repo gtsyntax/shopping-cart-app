@@ -3,35 +3,30 @@
         "id": 1,
         "name": "Lymio Men T-Shirt || T-Shirt for Men || Polo T Shirt || T-Shirt (Polo-34-37)",
         "category": "Men",
-        "price": 500,
-        "image": "abc1.png"
+        "price": 500
     },
     {
         "id": 2,
         "name": "Aero Armour Retro Chopper HOP 8-BIT T-Shirt",
         "category": "Men",
-        "price": 799,
-        "image": "abc2.png"
+        "price": 799
     },
     {
         "id": 3,
         "name": "Aero Armour Rafale India Edition Blueprint T-Shirt",
         "category": "Men",
-        "price": 799,
-        "image": "abc3.png"
+        "price": 799
     },
     {
         "id": 4,
         "name": "Rangriti Women's Viscose Classic Ankle Length Dress",
         "category": "Women",
-        "price": 1200,
-        "image": "abc4.png"
+        "price": 1200
     },
     {
         "id": 5,
         "name": "DUPATTA BAZAAR Women's Cream Lucknowi Net Dupatta with Gold Embroidery",
         "category": "Women",
-        "price": 649,
-        "image": "abc5.png"
+        "price": 649
     }
 ]

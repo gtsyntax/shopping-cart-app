@@ -5,13 +5,12 @@ interface CartItem {
     name: string;
     category: string;
     price: number;
-    image: string;
     quantity: number;
 }
 
 interface CartContextType {
     items: CartItem[];
-    addToCart: (product: {id: number, name: string, category: string, price: number, image: string}) => void;
+    addToCart: (product: {id: number, name: string, category: string, price: number}) => void;
     removeFromCart: (id: number) => void;
     getTotalItems: () => number;
     getTotalPrice: () => number;
@@ -22,7 +21,7 @@ export const CartContext = createContext<CartContextType | undefined>(undefined)
 export function ShoppingCartProvider({ children }: { children: ReactNode}) {
     const [items, setItems] = useState<CartItem[]>([]);
 
-    const addToCart = (product: {id: number, name: string, category: string, price: number, image: string}) => {
+    const addToCart = (product: {id: number, name: string, category: string, price: number}) => {
         setItems(prevItems => {
             const existingItem = prevItems.find(item => item.id === product.id);
 

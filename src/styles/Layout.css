@@ -2,15 +2,7 @@
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 400px;
+    grid-template-columns: 3fr 1fr;
     gap: 2rem;
     min-height: 300px;
-}
-
-.layout-left {
-    border: 1px solid black;
-}
-
-.layout-right {
-    border: 1px solid black;
 }
