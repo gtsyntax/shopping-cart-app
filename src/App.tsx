@@ -1,12 +1,13 @@
 import Header from "./components/Header";
 import Layout from "./components/Layout";
+import { ShoppingCartProvider } from "./provider/ShoppingCartProvider";
 
 function App() {
   return (
-    <main>
-      <Header />
-      <Layout />
-    </main>
+      <ShoppingCartProvider>
+        <Header />
+        <Layout />
+      </ShoppingCartProvider>
   )
 }
 

@@ -1,24 +1,24 @@
 import "../styles/CartItem.css"
 
-function CartItem(): JSX.Element {
+function CartItem({item, removeFromCart, incrementQuantity, decrementQuantity}): JSX.Element {
     return (
         <div className="cart-item-container">
             <div className="cart-item-desc">
-                <h3>Aero Armour Retro Chopper HOP 8-BIT T-Shirt</h3>
-                <p>Category: Men</p> 
+                <h3>{item.name}</h3>
+                <p>Category: {item.category}</p> 
             </div>
 
             <div className="cart-item-qty">
-                <button className="cart-item-btn"> - </button>
-                <p><strong>2</strong></p>
-                <button className="cart-item-btn"> + </button>
+                <button className="cart-item-btn" onClick={() => decrementQuantity(item.id)}> - </button>
+                <p><strong>{item.quantity}</strong></p>
+                <button className="cart-item-btn" onClick={() => incrementQuantity(item.id)}> + </button>
             </div>
 
             <div className="cart-item-price">
-                <p>$799</p>
+                <p>${item.price * item.quantity}</p>
             </div>
 
-            <button className="cart-item-btn">Add To Cart</button>
+            <button className="cart-item-btn" onClick={() => removeFromCart(item.id)}>Remove</button>
         </div>
     )
 }

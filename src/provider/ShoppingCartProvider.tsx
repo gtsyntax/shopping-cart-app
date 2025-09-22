@@ -12,6 +12,8 @@ interface CartContextType {
     items: CartItem[];
     addToCart: (product: {id: number, name: string, category: string, price: number}) => void;
     removeFromCart: (id: number) => void;
+    incrementQuantity: (id: number) => void;
+    decrementQuantity: (id: number) => void;
     getTotalItems: () => number;
     getTotalPrice: () => number;
 }
@@ -37,6 +39,28 @@ export function ShoppingCartProvider({ children }: { children: ReactNode}) {
         setItems(prevItems => prevItems.filter(item => item.id !== id));
     }
 
+    const incrementQuantity = (id: number) => {
+        setItems(prevItems => prevItems.map(item => 
+            item.id === id ? {...item, quantity: item.quantity + 1} : item
+        ));
+    }
+
+    const decrementQuantity = (id: number) => {
+        setItems(prevItems =>
+            prevItems.reduce((acc, item) => {
+                if (item.id === id) {
+                    const newQuantity = item.quantity - 1;
+                    if (newQuantity > 0) {
+                        acc.push({ ...item, quantity: newQuantity});
+                    }
+                } else {
+                    acc.push(item);
+                }
+                return acc;
+            }, [] as CartItem[])
+        );
+    }
+
     const getTotalItems = () => {
         return items.reduce((total, item) => total + item.quantity, 0);
     }
@@ -49,6 +73,8 @@ export function ShoppingCartProvider({ children }: { children: ReactNode}) {
         items,
         addToCart,
         removeFromCart,
+        incrementQuantity,
+        decrementQuantity,
         getTotalItems,
         getTotalPrice
     };
